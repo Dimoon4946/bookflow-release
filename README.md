@@ -50,5 +50,43 @@ public/     - публичная часть приложения
 docs/       - документация проекта
 init/       - SQL-скрипты инициализации БД
 
+---
+
+## Запуск проекта
+
+### Локальный запуск
+
+1. Установить PHP 8 и MySQL 8.
+2. Импортировать базу данных из папки `init/`.
+3. Выполнить установку зависимостей:
+
+```bash
+composer install
+```
+
+4. Запустить веб-сервер.
+5. Открыть приложение в браузере.
+
+### Запуск через Docker Compose
+
+В корне проекта выполнить:
+
+```bash
+docker compose up -d
+```
+
+После запуска приложение будет доступно по адресу:
+
+```text
+http://localhost
+```
+
+## Авторы
+
+Калашников М.А.
+Степанов Д.Ю.
+Шац О.С.
+
+
 Ссылка на чек-лист: https://docs.google.com/spreadsheets/d/1C2Ve560aYyYNuCo1nTzAhFmJAMpMCa9u4jAMhkHLqLk/edit?usp=sharing
 Ссылка на презентацию: https://docs.google.com/presentation/d/1Ox_CgIgnWFLr11SnfpeqgjKeN8VZtC4s/edit?usp=sharing&ouid=116180710932093435274&rtpof=true&sd=true
