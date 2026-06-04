@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+
+  web:
+    build: .
+    container_name: bookflow-web
+
+    ports:
+      - "8080:80"
+
+    volumes:
+      - .:/var/www/html
+
+    depends_on:
+      - db
+
+  db:
+    image: mysql:8
+
+    container_name: bookflow-db
+
+    restart: always
+
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: bookflow
+
+    ports:
+      - "3307:3306"
+
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init:/docker-entrypoint-initdb.d
+
+volumes:
+  db_data:
